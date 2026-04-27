@@ -1,4 +1,4 @@
-name: Java CI with Maven
+name: Обновление на Java 21
 
 on:
   push:
@@ -13,12 +13,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: Set up JDK 17
+    - name: Установка JDK 21 (Temurin)
       uses: actions/setup-java@v4
       with:
-        java-version: '17'
+        java-version: '21'
         distribution: 'temurin'
         cache: maven
         
-    - name: Build with Maven
+    - name: Сборка проекта через Maven
       run: mvn -B package --file pom.xml
